@@ -2,30 +2,33 @@ const container = document.querySelector('.container');
 const gridButton = document.querySelector('#create-grid');
 const resetButton = document.querySelector('#reset');
 
-// Creates elements for grid rows
-function createRows () {
-    const gridRows = document.createElement('div');
-    gridRows.classList.add('grid-square');
-    container.appendChild(gridRows)
-}
-
 // Creates grid
 function createGrid() {
+    resetGrid();
     for (i = 0; i < gridSize; i++) {
-        createRows();
-        container.style.display = 'grid';
-        container.style.gridTemplateRows = `repeat(${gridSize}, 1fr)`;
+        const gridRows = document.createElement('div');
+        gridRows.classList.add('row');
+        container.appendChild(gridRows);
+        for (let j = 0; j < gridSize; j++) {
+            const gridSquare = document.createElement('div');
+            gridSquare.classList.add('square');
+            gridRows.appendChild(gridSquare);
+        }
     }
 }
 
 // Creates grid upon button press
 gridButton.addEventListener('click', () => {
     gridSize = document.querySelector('#size-input').value;
-    resetGrid();
     createGrid();
 });
 
-// Resets grid
+// Button to reset grid
 resetButton.addEventListener('click', () => {
-    container.replaceChildren();
+    resetGrid();
 });
+
+// Resets grid
+function resetGrid() {
+    container.replaceChildren();
+}
