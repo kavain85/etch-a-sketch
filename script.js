@@ -18,11 +18,6 @@ function createGrid() {
     }
 }
 
-// Resets grid
-function resetGrid() {
-    container.replaceChildren();
-};
-
 // Creates grid upon button press
 gridButton.addEventListener('click', () => {
     gridSize = document.querySelector('#size-input').value;
@@ -30,7 +25,7 @@ gridButton.addEventListener('click', () => {
     createGrid();
 });
 
-// Reloads page
+// Resets grid
 resetButton.addEventListener('click', () => {
-    window.location.reload();
+    container.replaceChildren();
 });
