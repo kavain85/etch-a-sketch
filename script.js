@@ -20,7 +20,11 @@ function createGrid() {
 // Creates grid upon button press
 gridButton.addEventListener('click', () => {
     gridSize = document.querySelector('#size-input').value;
+    if (gridSize > 1 && gridSize <= 64) {
     createGrid();
+    } else {
+        alert('Please enter a size between 1 and 64.')
+    };
 });
 
 // Button to reset grid
