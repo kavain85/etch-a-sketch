@@ -21,7 +21,7 @@ function createGrid() {
 gridButton.addEventListener('click', () => {
     gridSize = document.querySelector('#size-input').value;
     if (gridSize > 1 && gridSize <= 64) {
-    createGrid();
+        createGrid();
     } else {
         alert('Please enter a size between 1 and 64.')
     };

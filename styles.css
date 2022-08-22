@@ -1,13 +1,49 @@
 body {
-    background-color: #1c1c1c;
-}
-.container {
-    border: 1px solid white;
-    height: 1000px;
-    width: 1000px;
+    font-family: 'Silkscreen', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #3a3a3a;
+    color: cornsilk;
+    gap: 30px;
 }
 
-.grid-square {
-    background-color: rebeccapurple;
-    border: 1px orange solid;
+#header {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    border-radius: 10px;
+    font-size: 80pt;
+}
+
+.container {
+    display: grid;
+    background-color: white;
+    border: thick solid black;
+    height: 800px;
+    width: 800px;
+}
+
+.row {
+    display: flex;
+    flex: 1 0 auto;
+}
+
+.square {
+    flex: 1 0 auto;
+    border: thin solid #eeeeee;
+}
+
+#controls {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    font-size: 16pt;
+}
+
+button {
+    font-family: 'Silkscreen', sans-serif;
 }
