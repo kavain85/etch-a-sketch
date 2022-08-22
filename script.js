@@ -1,35 +1,36 @@
 const container = document.querySelector('.container');
 const gridButton = document.querySelector('#create-grid');
 const resetButton = document.querySelector('#reset');
-let sizeInput;
-let gridSize;
 
-function createSquare () {
-    const gridSquare = document.createElement('div');
-    gridSquare.classList.add('grid-square');
-    container.appendChild(gridSquare)
+// Creates elements for grid rows
+function createRows () {
+    const gridRows = document.createElement('div');
+    gridRows.classList.add('grid-square');
+    container.appendChild(gridRows)
 }
 
+// Creates grid
 function createGrid() {
     for (i = 0; i < gridSize; i++) {
-        createSquare();
+        createRows();
+        container.style.display = 'grid';
+        container.style.gridTemplateRows = `repeat(${gridSize}, 1fr)`;
     }
 }
 
+// Resets grid
 function resetGrid() {
-    const gridExists = document.getElementsByClassName('#grid-square');
-    if (gridExists === true) {
-        gridSquare.classList.remove('grid-square')
-    };
+    container.replaceChildren();
 };
 
+// Creates grid upon button press
 gridButton.addEventListener('click', () => {
-    sizeInput = parseInt(prompt('Select grid size (1-10):'));
-    gridSize = sizeInput*sizeInput;
-    // resetGrid();
+    gridSize = document.querySelector('#size-input').value;
+    resetGrid();
     createGrid();
 });
 
+// Reloads page
 resetButton.addEventListener('click', () => {
     window.location.reload();
 });
