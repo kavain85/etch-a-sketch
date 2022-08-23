@@ -36,3 +36,11 @@ resetButton.addEventListener('click', () => {
 function resetGrid() {
     container.replaceChildren();
 }
+// Generates a random RGB value
+function randomRGB() {
+    let rgb = [];
+    for (let i = 0; i < 3; i++) {
+        rgb[i] = Math.floor(Math.random() * 256);
+    }
+    return(`rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`);
+}
