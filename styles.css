@@ -44,8 +44,15 @@ body {
     font-size: 14pt;
 }
 
-#input input {
-    width: 60px;
+#input {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+}
+#input input,
+#input select {
+    width: 100px;
 }
 
 button {
