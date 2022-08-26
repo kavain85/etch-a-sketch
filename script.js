@@ -36,6 +36,7 @@ resetButton.addEventListener('click', () => {
 function resetGrid() {
     container.replaceChildren();
 }
+
 // Generates a random RGB value
 function randomRGB() {
     let rgb = [];
@@ -44,3 +45,9 @@ function randomRGB() {
     }
     return(`rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`);
 }
+
+container.addEventListener('mouseover', (e) => {
+    if (e.target.matches('.square')) {
+        e.target.style.backgroundColor = randomRGB();
+    }
+});
