@@ -46,8 +46,25 @@ function randomRGB() {
     return(`rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`);
 }
 
+function penColor() {
+    const penColorSelect = document.getElementById('pen-color');
+    if (penColorSelect.value === 'black') {
+        return 'rgb(0, 0, 0)';
+    } else if (penColorSelect.value === 'red') {
+        return 'rgb(255, 0, 0)';
+    } else if (penColorSelect.value === 'green') {
+        return 'rgb(0, 255, 0)';
+    } else if (penColorSelect.value === 'blue') {
+        return 'rgb(0, 0, 255)';
+    } else if (penColorSelect.value === 'white') {
+        return 'rgb(255, 255, 255)';
+    } else if (penColorSelect.value === 'random') {
+        return randomRGB();
+    }
+}
+
 container.addEventListener('mouseover', (e) => {
     if (e.target.matches('.square')) {
-        e.target.style.backgroundColor = randomRGB();
+        e.target.style.backgroundColor = penColor();
     }
 });
